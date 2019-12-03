@@ -40,8 +40,8 @@ namespace Targil3
             SetBlackOutDates();
             //init pictures
             imageIndex = 0;
-            vbImage.Width = 100;
-            vbImage.Height = 100;
+            vbImage.Width = 200;
+            vbImage.Height = 200;
             vbImage.Stretch = Stretch.Fill;
             UserControlGrid.Children.Add(vbImage);
             Grid.SetColumn(vbImage, 2);
@@ -114,8 +114,8 @@ namespace Targil3
         }
         private void vbImage_MouseLeave(object sender, MouseEventArgs e)
         {
-            vbImage.Width = 100;
-            vbImage.Height = 100;
+            vbImage.Width = 200;
+            vbImage.Height = 200;
         }
         private void vbImage_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -130,6 +130,5 @@ namespace Targil3
             MyImage = CreateViewImage();
             vbImage.Child = MyImage;
         }
-
     }
 }

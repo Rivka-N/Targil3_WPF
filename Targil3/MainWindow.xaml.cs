@@ -26,8 +26,8 @@ namespace Targil3
 
         public MainWindow()
         {
-          
-            List<Host> hostsList = new List<Host>()
+
+            hostsList = new List<Host>()
             {
                 new Host()
                 {
@@ -49,9 +49,17 @@ namespace Targil3
                             IsPool=true,
                             AllOrders= new List<DateTime>(),
                             Uris=new List<string>(){ "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7EaiMtaSq66a7ld_06bha6yt35XD1HT1uogbs7urdjoV00OYSDQ&s" }
-                        }
+                        },
+                        new HostingUnit()
+                        {
+                            UnitName="יופי נופש",
+                            NumRooms=6,
+                            IsPool=true,
+                            AllOrders=new List<DateTime>(),
+                            Uris=new List<string>(){ "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqixUqyYOz2FIbCasd3sOb6-8W9kzJ9NB8sIeI-Gww1238A3EZ&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsUXkaDW-Nm9Ooly0QslEeEO2q70TA8BNlAnhLfdV7wCC2Cfuo&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUqk7kJ_jRtzOCeSCdh8gIIR38GYI4TQd4TfVJiN2iSwJppkXb&s" }
 
-                    }
+                  }
+                }
                 },
                 new Host()
                 {
@@ -104,17 +112,18 @@ namespace Targil3
                 }
             };
             InitializeComponent();
-            cbHostList.ItemsSource = hostsList;
-            cbHostList.DisplayMemberPath = "Host Name";
+            for (int i=0; i< 3; i++)
+            {
+                ComboBoxItem newItem = new ComboBoxItem();
+                newItem.Content = hostsList[i].HostName;//sets combo box to name
+                cbHostList.Items.Add(newItem);
+            }//adds items to combo list box
+            /*cbHostList.ItemsSource = hostsList;
+            cbHostList.DisplayMemberPath = "Host Name";*/
             cbHostList.SelectedIndex = 0;
-
-
-        }
-
-
-        private void CbHostList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
             InitializeHost(cbHostList.SelectedIndex);
+
+
         }
 
         private void InitializeHost(int index)
@@ -128,6 +137,12 @@ namespace Targil3
                 MainGrid.Children.Add(a);
                 Grid.SetRow(a, i + 1);
             }
+        }
+
+        private void CbHostList_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            InitializeHost(cbHostList.SelectedIndex);
+
         }
     }
 }

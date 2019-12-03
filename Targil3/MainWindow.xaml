@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Targil3"
         mc:Ignorable="d"
-        Title="מאגר צימרים" Height="640" Width="800" Background="White" FontFamily="Harrington">
+        Title="מאגר צימרים" Height="640" Width="800" Background="White" FontFamily="Harrington" FontSize="20">
     <Grid Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="40*"/>
@@ -18,8 +18,8 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-            <ComboBox Name="cbHostList" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0" />
-            <TextBox Name="tbHostName" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="{Binding Path=HostName}" VerticalAlignment="Stretch" Grid.Column="1" />
+            <ComboBox x:Name="cbHostList" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Grid.Column="0" SelectionChanged="CbHostList_SelectionChanged_1" FontWeight="Bold"  />
+            <TextBox Name="tbHostName" HorizontalAlignment="Stretch" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding Path=HostName}" VerticalAlignment="Stretch" Grid.Column="1" FontSize="30" FontWeight="Bold"/>
 
         </Grid>
     </Grid>

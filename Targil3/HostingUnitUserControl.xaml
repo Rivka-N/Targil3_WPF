@@ -5,18 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Targil3"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="800" BorderThickness="1" FontFamily="Arial" FontSize="20" Background="Azure" >
+             d:DesignHeight="200" d:DesignWidth="800" BorderThickness="1" FontFamily="David" FontSize="20" Background="Azure" FontWeight="Bold" >
     <Grid Name="UserControlGrid" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <CheckBox x:Name="cbPool" Content="בריכה" HorizontalAlignment="Left" Margin="54,138,0,0" VerticalAlignment="Top" Height="26" Width="96" IsChecked="{Binding Path=IsPool}"/>
-        <TextBox Name="tbRooms" HorizontalAlignment="Left" Height="36" Margin="54,36,0,0" TextWrapping="Wrap" Text="{Binding Path=NumRooms}" VerticalAlignment="Top" Width="156"/>
-        <Label Name="lRooms" Content="מספר חדרים" HorizontalAlignment="Left" Margin="115,100,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="tbUnitName" HorizontalAlignment="Left" Height="24" Margin="54,100,0,0" TextWrapping="Wrap" Text="{Binding Path=UnitName}" VerticalAlignment="Top" Width="53"/>
-        <Viewbox Name="vbCalendar" Grid.Column="1" HorizontalAlignment="Left" Height="153" Margin="19,6,0,0" VerticalAlignment="Top" Width="231" Stretch="Fill"/>
-        <Button Name="btOrder" Content="הזמן" Grid.Column="1" HorizontalAlignment="Left" Margin="100,164,0,0" VerticalAlignment="Top" Width="68" Height="24"/>
+        <CheckBox x:Name="cbPool" Content="בריכה" HorizontalAlignment="Left" Margin="46,140,0,0" VerticalAlignment="Top" Height="26" Width="96" IsChecked="{Binding Path=IsPool}"/>
+        <TextBox Name="tbRooms" HorizontalAlignment="Left" Height="28" Margin="38,94,0,0" TextWrapping="Wrap" Text="{Binding Path=NumRooms}" VerticalAlignment="Top" Width="40" TextAlignment="Center" BorderThickness="0"/>
+        <Label Name="lRooms" Content="מספר חדרים" HorizontalAlignment="Left" Margin="105,96,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="tbUnitName" HorizontalAlignment="Left" Height="32" Margin="38,36,0,0" TextWrapping="Wrap" Text="{Binding Path=UnitName}" VerticalAlignment="Top" Width="212" IsUndoEnabled="False" BorderThickness="0" TextAlignment="Center" />
+        <Viewbox Name="vbCalendar" Grid.Column="1" HorizontalAlignment="Left" Height="154" VerticalAlignment="Top" Width="266" Stretch="Fill"/>
+        <Button Name="btOrder" Content="הזמן" Grid.Column="1" HorizontalAlignment="Left" Margin="94,159,0,0" VerticalAlignment="Top" Width="68" Height="29" Click="BtOrder_Click"/>
     </Grid>
 </UserControl>
